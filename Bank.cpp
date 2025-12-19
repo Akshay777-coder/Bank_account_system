@@ -1,40 +1,65 @@
+/*===========================================*/
+/* Total count (rough idea) */
+
+// Item	     Count
+// Classes  	4
+// Functions	~18–22
+// Operators	2–3 (optional)
+/*===========================================*/
+/* Operator overloading (keep it minimal) */
+
+// Just 2 operators are enough:
+// 1. +=   → deposit
+// 2. <<   → display account
+/*===========================================*/
+
 #include<iostream>
 using namespace std;
 
-class BankAccount{
+class account {
     int accountNumber;
+    string name;
     int balance;
-    int transactions[5];
-    int amount;
-    static int count;
-    public:
-        void openAccount(); // input accountNumber and initial Balance
-        void deposits(int amount); // add amount to balance and store in array
-        void withdraw(int amount); // subtract amount if balance is sufficient
-        void showBalance(); // display current balance
-        void showTransactions(); // display all transactions
+public:
+    void deposits() {};
+    virtual void withdraw() {};
+    virtual void showDetails() {};
+    void getAccountNumber() {};
+    void getBalance() {};
+    void setBalance() {};
+    virtual void destructor() {};
+};
+class savingsAccount {
+    int interestRate;
+public:
+    void addInterest() {};
+    virtual withdraw() override {}; // override if nedded
+    virtual showDetails() override {}; // override
 };
 
+class currentAccount {
+    int overdraftLimit;
+public:
+    void withdraw() {}; // (override – allow overdraft)
+    void showDetails() {};
+};
 
-void BankAccount :: openAccount(){
-    account[count];
-    cout << "Enter Your Account Number: ";
-    cin>>accountNumber;
-    cout << "Enter Your Balance: ";
-    cin >> balance;
-}
-/*void BankAccount :: deposits(int amount){
-}
-void BankAccount :: withdraw(int amount){
-}
-void BankAccount :: showBalance(){
-    
-    cout << "Current Balance: " <<balance<< endl;
-}
-void showTransactions(){
-}
-*/
+class bank {
+    int account<vector*>;
+public:
+    void createAccount() {};
+    void findAccount() {};
+    void depositMoney() {};
+    void withdrawMoney() {};
+    void singleAccount() {};
+    void allAccounts() {};
+    void deleteAccount() {};
+    void menu() {}; // main controller
+};
 
+int main() {
+    return 0;
+}
 void menu(void){
     while(1){
         int choice;
